@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "./components/navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "./components/app-sidebar";
 
 
 const geistSans = localFont({
@@ -35,8 +37,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar/>
-          {children}
+          <SidebarProvider>
+            <AppSidebar />
+            <main>
+              <SidebarTrigger />
+              {/* <Navbar /> */}
+              {children}
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

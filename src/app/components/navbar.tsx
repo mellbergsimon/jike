@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/menubar"
 import { useTheme } from 'next-themes'
 
-
 export function Navbar() {
   const pathname = usePathname()
   const { setTheme } = useTheme()
@@ -52,7 +51,6 @@ export function Navbar() {
       </MenubarMenu>
 
     </Menubar>
-
 
 
     // <nav className='text-green-400 '>
